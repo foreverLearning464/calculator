@@ -1,0 +1,61 @@
+
+.container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+
+    width: 400px;
+    height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        'display display display display'
+        'ac c plus minus'
+        'one two three multiply'
+        'four five six devide'
+        'seven eight nine equals'
+        'zero zero decimal equals';
+}
+
+.grid div {
+    /* background-color: bisque; */
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.darkGrey {
+    background-color: darkGrey;
+}
+
+.lightGrey {
+    background-color: lightGrey;
+}
+
+.red {
+    background-color: firebrick;
+}
+
+.cyan {
+    background-color: darkcyan;
+}
+
+#display {
+    grid-area: display;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#equals {
+    grid-area: equals;
+}
