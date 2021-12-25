@@ -6,8 +6,12 @@
 const App = () => {
 
 const [ expression, setExpression ] = React.useState("")
-const 
+const [ answer, setAnswer ] = React.useState("")
 
+
+const calculate = () => {
+    setAnswer(eval(expression))
+}
 
 const updateDisplay = (str) => {
     setExpression(expression + str)
@@ -16,7 +20,10 @@ const updateDisplay = (str) => {
     return(
         <div className="container">
         <div className="grid">
-            <div className="display-area" id="display">{expression}</div>
+            <div className="display-area" id="display">
+                <input type="text" value={expression} placeholder="0" />
+                {answer}
+            </div>
             <div className="button red" id="ac">AC</div> 
             <div className="button red" id="c">C</div>
             <div onClick={() => updateDisplay('+')} className="button lightGrey" id="plus">+</div>
@@ -32,7 +39,7 @@ const updateDisplay = (str) => {
             <div onClick={() => updateDisplay('7')} className="button darkGrey" id="seven">7</div>
             <div onClick={() => updateDisplay('8')} className="button darkGrey" id="eight">8</div>
             <div onClick={() => updateDisplay('9')} className="button darkGrey" id="nine">9</div>
-            <div className="button cyan" id="equals">=</div>
+            <div onClick={() => calculate()} className="button cyan" id="equals">=</div>
             <div onClick={() => updateDisplay('0')} className="button darkGrey" id="zero">0</div>
             <div onClick={() => updateDisplay('.')} className="button darkGrey" id="decimal">.</div>
             
